@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMETOLOGO</title>
+    <link rel="stylesheet" href="nametologo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="color: white;">WRITE YOUR NAME AND WELL GUESS YOUR PERSONALITY</h1>
+    <section class="divcontainer">
+       
+        <div class="formconatiner">
+           <div> <section>
+                <label for="name">ENTER YOUR NAME</label><br>
+                <input type="text" id="name" placeholder="ENTER YOUR NAME" style="color: white;">
+            </section>
+            
+            <div class="img"> <img class="gif" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8-fZLdU9Z46Q3_FLm4ZOWkUQvHr9tkaD7elKwKNgCjA&usqp=CAU&ec=48600112"  height="225" width="200"></div>
+            <p class="facts"></p>
+            <button type="button">CLICKME</button>
+        </div>
+    </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</body>
+<script>
+   $(document).ready(function(){
+    $('button').click(function(){
+      $('.gif').attr('src',`https://cataas.com/c/gif`);
+      $.ajax({
+        url:'https://cat-fact.herokuapp.com/facts',
+        method:'GET',
+        success:function(response){
+            var facts=response.all;
+            if(Array.isArray(facts)){
+            var facttext='';
+            facts.forEach(function(fact){
+                facttext+=fact.text+'<br>';
+
+            });
+            $('p').html(facttext);
+            console.log('facttext');
+        }},
+       
+
+      })
+    })
+   })
+</script>
+
+
+</html>

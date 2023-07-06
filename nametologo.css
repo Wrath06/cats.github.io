@@ -1,0 +1,50 @@
+*{
+    font-family: luckiest guy;
+}
+body{
+    background-color: #009966;
+    width: 100%;
+}
+.divcontainer{
+    background-color: #708090;
+    margin: auto;
+    margin-top: 50px;
+    width:600px;
+    height:375px;
+    border:2px solid white;
+
+}
+h1{
+    text-align: center;
+}
+.formconatiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    margin-top: 10px;
+}
+input{
+    background-color: rgb(235, 112, 112);
+    width:200px;
+    height:40px;
+    
+
+}
+section{
+    color:white;
+}
+::placeholder{
+    color:white;
+    text-align:center;
+
+}
+button{
+    background-color:rgb(116, 204, 255);
+    text-align:center;
+    width:80px;
+    margin-left:40px;
+    margin-top: 20px;
+    height: 30px;
+}
